@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ compile_tests_ext ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -24,7 +24,7 @@ jobs:
         chmod 755 ./bin/kb-sdk
         # copy ${{secrets.KBASE_TEST_TOKEN }} into a file
         # cat ${{secrets.KBASE_TEST_TOKEN }} > /kb/module/work/token
-        echo ${{secrets.KBASE_TEST_TOKEN }}
+        # echo ${{secrets.KBASE_TEST_TOKEN }}
         ./bin/kb-sdk test
 
   build_test_local:
