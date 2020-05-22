@@ -19,6 +19,8 @@ jobs:
       env:
         KBASE_TEST_TOKEN: ${{ secrets.KBASE_TEST_TOKEN }}
       run: |
+        echo ${{secrets.KBASE_TEST_TOKEN }}
+        echo $KBASE_TEST_TOKEN
         docker pull ialarmedalien/kb-sdk
         docker run ialarmedalien/kb-sdk genscript > ./bin/kb-sdk
         chmod 755 ./bin/kb-sdk
